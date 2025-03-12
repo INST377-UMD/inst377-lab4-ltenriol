@@ -1,0 +1,116 @@
+<html>
+  <style>
+    body {
+      background-color: aquamarine;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    #alertMe,
+    #colorChange,
+    #textTester,
+    #textSection {
+      width: 45%;
+      background-color: lightcoral;
+      padding: 20px;
+      border-radius: 15px;
+      border: solid 5px slateblue;
+      text-align: center;
+      margin: 0;
+    }
+  </style>
+  <body>
+    <h1 id="addHead">INST377 - Lab 4</h1>
+
+    <div class="container">
+      <!-- Name -->
+      <div id="alertMe">
+        <form id="alertForm" action="" onsubmit="greeting(); return false">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+          <input type="submit" id="submit" value="Alert Me" />
+        </form>
+        <script type="text/javascript">
+          function greeting() {
+            const name = document.getElementById("name").value;
+            alert(`Hello, ${name}!`);
+          }
+        </script>
+      </div>
+
+      <!-- Change Color -->
+      <div id="colorChange">
+        <input
+          type="submit"
+          id="button"
+          value="Change Color"
+          onclick="changeColor(); return false"
+        />
+        <script type="text/javascript">
+          let isBlue = false;
+
+          function changeColor() {
+            if (isBlue) {
+              document.body.style.backgroundColor = "aquamarine";
+            } else {
+              document.body.style.backgroundColor = "skyblue";
+            }
+            isBlue = !isBlue;
+          }
+        </script>
+      </div>
+
+      <!-- Text Tester -->
+      <div id="textTester">
+        <form
+          id="txtValid"
+          value="Validate Text"
+          onsubmit="textValid(); return false"
+        >
+          <label for="txt">Text Tester: </label>
+          <input type="text" id="txt" required />
+          <input type="submit" id="txtSubmit" value="Validate Text" />
+        </form>
+        <script type="text/javascript">
+          var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+          function textValid() {
+            const input = document.getElementById("txt").value;
+            if (validation.test(input)) {
+              alert("Invalid Character!");
+              return false;
+            } else {
+              alert("Valid!");
+              return true;
+            }
+          }
+        </script>
+      </div>
+
+      <!-- Text Section -->
+      <div id="textSection">
+        <input
+          type="button"
+          id="addTxt"
+          value="Add Text"
+          onclick="addText();"
+        />
+
+        <script type="text/javascript">
+          function addText() {
+            document.getElementById("addHead").textContent =
+              "INST377 - Lab 4 - Adding Text";
+
+            return false;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
