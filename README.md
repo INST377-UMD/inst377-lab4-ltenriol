@@ -5,4 +5,4 @@
 Laskar Ali Tenriola
 
 # Comments: 
-I found lab 4 to be empty so I edited it. I apologize.
+I found lab 4 to be empty when checked again. I apologize.
